@@ -1,0 +1,23 @@
+# robots.txt for kontraktorhvac.web.id
+# Kontraktor Ducting HVAC - Spesialis Fabrikasi & Instalasi Ducting Exhaust, Kitchen Mashu & AC
+
+User-agent: *
+Allow: /
+
+# Disallow non-public directories
+Disallow: /assets/vendor/
+Disallow: /assets/scss/
+Disallow: /forms/
+Disallow: /.git/
+Disallow: /.vscode/
+
+# Allow CSS and JS for rendering
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/img/
+
+# Sitemap
+Sitemap: https://kontraktorhvac.web.id/sitemap.xml
+
+# Crawl delay (optional, respectful)
+Crawl-delay: 2
