@@ -1,0 +1,105 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+.team {
+  .member-card {
+    background: var(--surface-color);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(15, 42, 68, 0.06);
+    border: 1px solid color-mix(in srgb, var(--heading-color), transparent 92%);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-6px);
+      border-color: color-mix(in srgb, var(--accent-color), transparent 65%);
+      box-shadow: 0 16px 36px rgba(15, 42, 68, 0.12);
+
+      .member-img img {
+        transform: scale(1.05);
+      }
+
+      .member-img .social-links {
+        opacity: 1;
+        bottom: 16px;
+      }
+    }
+  }
+
+  .member-img {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .social-links {
+      position: absolute;
+      bottom: -48px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      opacity: 0;
+      transition: all 0.4s ease;
+
+      a {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: var(--accent-color);
+        color: var(--contrast-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: color-mix(in srgb, var(--accent-color), black 15%);
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  .member-info {
+    padding: 20px 16px 22px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+
+    h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--heading-color);
+      margin-bottom: 6px;
+      font-family: var(--heading-font);
+    }
+
+    span {
+      font-size: 13.5px;
+      color: var(--accent-color);
+      font-weight: 600;
+      line-height: 1.35;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}

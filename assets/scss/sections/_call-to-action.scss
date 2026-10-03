@@ -1,0 +1,351 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Call To Action Section
+--------------------------------------------------------------*/
+.call-to-action {
+  &.section {
+    padding: 45px 0;
+
+    @media (max-width: 768px) {
+      padding: 35px 0;
+    }
+  }
+
+  .row {
+    --bs-gutter-y: 1.5rem;
+  }
+
+  .info-block {
+    padding-right: 20px;
+
+    @media (max-width: 992px) {
+      padding-right: 0;
+    }
+
+    .tagline {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-color);
+      background: color-mix(in srgb, var(--accent-color), transparent 90%);
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--heading-color);
+      line-height: 1.25;
+      margin-bottom: 12px;
+
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 1.35rem;
+      }
+    }
+
+    >p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: color-mix(in srgb, var(--default-color), transparent 30%);
+      margin-bottom: 18px;
+    }
+  }
+
+  .highlight-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 0;
+
+    .highlight-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--surface-color);
+      padding: 12px 18px;
+      border-radius: 10px;
+      box-shadow: 0 4px 18px color-mix(in srgb, var(--default-color), transparent 93%);
+      transition: all 0.3s ease;
+      border-left: 3px solid transparent;
+
+      &:hover {
+        transform: translateX(5px);
+        border-left-color: var(--accent-color);
+        box-shadow: 0 6px 22px color-mix(in srgb, var(--default-color), transparent 88%);
+      }
+
+      .card-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: color-mix(in srgb, var(--accent-color), transparent 85%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+
+        i {
+          font-size: 1.1rem;
+          color: var(--accent-color);
+          transition: color 0.3s ease;
+        }
+      }
+
+      &:hover .card-icon {
+        background: var(--accent-color);
+
+        i {
+          color: var(--contrast-color);
+        }
+      }
+
+      .card-body-content {
+        h5 {
+          font-size: 0.92rem;
+          font-weight: 600;
+          color: var(--heading-color);
+          margin-bottom: 2px;
+        }
+
+        p {
+          font-size: 0.8rem;
+          color: color-mix(in srgb, var(--default-color), transparent 40%);
+          margin: 0;
+          line-height: 1.35;
+        }
+      }
+    }
+  }
+
+  .action-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+    padding: 0 10px;
+
+    @media (max-width: 992px) {
+      padding: 0;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 0;
+    }
+
+    .btn-get-started {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-color);
+      color: var(--contrast-color);
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      i {
+        font-size: 0.95rem;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        background: color-mix(in srgb, var(--accent-color), black 15%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px color-mix(in srgb, var(--accent-color), transparent 55%);
+
+        i {
+          transform: translateX(4px);
+        }
+      }
+    }
+
+    .phone-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .phone-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1.5px solid color-mix(in srgb, var(--accent-color), transparent 50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        animation: phone-ring 2s ease-in-out infinite;
+
+        i {
+          font-size: 0.95rem;
+          color: var(--accent-color);
+        }
+      }
+
+      .phone-details {
+        .phone-label {
+          display: block;
+          font-size: 0.68rem;
+          color: color-mix(in srgb, var(--default-color), transparent 45%);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 1px;
+        }
+
+        .phone-number {
+          font-size: 0.95rem;
+          font-weight: 700;
+          color: var(--heading-color);
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: var(--accent-color);
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes phone-ring {
+
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+
+    10% {
+      transform: rotate(12deg);
+    }
+
+    20% {
+      transform: rotate(-10deg);
+    }
+
+    30% {
+      transform: rotate(8deg);
+    }
+
+    40% {
+      transform: rotate(-6deg);
+    }
+
+    50% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .image-block {
+    position: relative;
+    padding: 10px 10px;
+
+    @media (max-width: 992px) {
+      padding: 10px 0;
+    }
+
+    .main-image {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px color-mix(in srgb, var(--default-color), transparent 82%);
+      max-height: 220px;
+
+      img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.03);
+      }
+    }
+
+    .counter-badge {
+      position: absolute;
+      top: 0px;
+      right: 6px;
+      z-index: 2;
+
+      @media (max-width: 576px) {
+        top: 2px;
+        right: 2px;
+      }
+
+      .counter-inner {
+        background: var(--accent-color);
+        color: var(--contrast-color);
+        padding: 10px 16px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 10px 25px color-mix(in srgb, var(--accent-color), transparent 50%);
+
+        .counter-value {
+          display: block;
+          font-size: 1.4rem;
+          font-weight: 800;
+          line-height: 1;
+          margin-bottom: 2px;
+          font-family: var(--heading-font);
+
+          @media (max-width: 576px) {
+            font-size: 1.2rem;
+          }
+        }
+
+        .counter-text {
+          font-size: 0.65rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          opacity: 0.95;
+        }
+      }
+    }
+
+    .accent-badge {
+      position: absolute;
+      bottom: 0px;
+      left: 4px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface-color);
+      padding: 7px 13px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px color-mix(in srgb, var(--default-color), transparent 85%);
+
+      @media (max-width: 576px) {
+        left: 4px;
+        bottom: -2px;
+      }
+
+      i {
+        font-size: 1.05rem;
+        color: var(--accent-color);
+      }
+
+      span {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--heading-color);
+      }
+    }
+  }
+}

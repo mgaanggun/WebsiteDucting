@@ -1,0 +1,168 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Process Section
+--------------------------------------------------------------*/
+.process {
+  position: relative;
+
+  .process-card,
+  .process-step {
+    background: var(--surface-color);
+    border-radius: 16px;
+    padding: 32px 24px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid color-mix(in srgb, var(--heading-color), transparent 92%);
+    border-top: 3px solid transparent;
+    box-shadow: 0 10px 30px rgba(15, 42, 68, 0.04);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    text-align: left;
+
+    &:hover {
+      transform: translateY(-8px);
+      border-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+      border-top-color: var(--accent-color);
+      box-shadow: 0 20px 40px color-mix(in srgb, var(--accent-color), transparent 85%);
+
+      .step-icon-wrap,
+      .step-icon {
+        background: linear-gradient(135deg, var(--accent-color) 0%, #d4551d 100%);
+        border-color: transparent;
+        transform: scale(1.05);
+
+        i {
+          color: var(--contrast-color);
+        }
+      }
+
+      .step-watermark,
+      .step-number {
+        color: color-mix(in srgb, var(--accent-color), transparent 90%);
+      }
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+
+      .step-badge {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: var(--accent-color);
+        background: color-mix(in srgb, var(--accent-color), transparent 90%);
+        padding: 4px 12px;
+        border-radius: 20px;
+      }
+
+      .step-phase {
+        font-size: 11px;
+        font-weight: 600;
+        color: color-mix(in srgb, var(--default-color), transparent 45%);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    .step-icon-wrap,
+    .step-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--accent-color), transparent 92%);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0 20px 0;
+      transition: all 0.35s ease;
+
+      i {
+        font-size: 26px;
+        color: var(--accent-color);
+        transition: color 0.35s ease;
+      }
+    }
+
+    h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--heading-color);
+      margin-bottom: 12px;
+      font-family: var(--heading-font);
+      line-height: 1.35;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: color-mix(in srgb, var(--default-color), transparent 25%);
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .step-deliverables {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 16px;
+      border-top: 1px dashed color-mix(in srgb, var(--default-color), transparent 88%);
+
+      .deliverable-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--heading-color);
+        background: color-mix(in srgb, var(--default-color), transparent 95%);
+        padding: 4px 10px;
+        border-radius: 20px;
+        border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+
+        i {
+          color: var(--accent-color);
+          font-size: 12px;
+        }
+      }
+    }
+
+    .step-watermark,
+    .step-number {
+      position: absolute;
+      right: 14px;
+      top: 8px;
+      font-size: 68px;
+      font-weight: 900;
+      line-height: 1;
+      font-family: var(--heading-font);
+      color: color-mix(in srgb, var(--heading-color), transparent 95%);
+      pointer-events: none;
+      user-select: none;
+      transition: color 0.35s ease;
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .process-card,
+    .process-step {
+      padding: 24px 20px;
+
+      h3 {
+        font-size: 18px;
+      }
+
+      .step-watermark,
+      .step-number {
+        font-size: 56px;
+      }
+    }
+  }
+}
